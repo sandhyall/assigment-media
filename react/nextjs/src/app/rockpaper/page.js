@@ -2,11 +2,22 @@
 import React, { useState } from 'react'
 import { FaHandPaper, FaHandRock, FaHandScissors } from "react-icons/fa";
 import Confetti from 'react-confetti'
+
+
 const Rockpaper =  () => {
+  const [userScore,setUserScore] = useState(0)
+  const [computerscore,setcomputerScore] = useState(0)
+
   const [userChoice,setUserChoice ] = useState(null)
   const handleChange = (choice)=>{
     setUserChoice(choice)
+    
+    
   }
+  const checkWin = ()=>{
+    
+  }
+
   const choice = [
     {name:'rock',icon: <FaHandRock size ={100}onClick={()=>handleChange('rock')}/> },
       {name:'paper',icon: <FaHandPaper size ={100}onClick={()=>handleChange('paper')}/> },
@@ -19,6 +30,7 @@ const Rockpaper =  () => {
 />
   return ( 
     <div>
+      <p className='bg-pink-500 flex justify-center items-center shadow-2xl m-4 h-8'>WELCOME TO SCISSOR, PAPER,ROCK GAME</p>
       <div className='bg-blue-500 flex items-center justify-center m-4 p-4 gap-7	'>
       <div className='bg-purple-600 shadow-lg flex h-72 w-[50%] '>computer
       {userChoice && choice[randomNum].icon}
@@ -49,6 +61,11 @@ const Rockpaper =  () => {
         { choice[randomNum].name === 'rock' &&  userChoice=== 'paper' && confetti} 
         { choice[randomNum].name === 'paper' &&  userChoice=== 'scissor' && confetti } 
         { choice[randomNum].name === 'scissor' &&  userChoice=== 'rock' && confetti } 
+
+        <div className='bg-orange-400'>your score :</div>
+        <div className='bg-orange-400'>computerscore :</div>
+        
+      
       
        </div>
 
