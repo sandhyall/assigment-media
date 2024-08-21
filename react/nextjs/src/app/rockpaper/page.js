@@ -1,7 +1,9 @@
 'use client'
 import React, { useState } from 'react'
+
 import { FaHandPaper, FaHandRock, FaHandScissors } from "react-icons/fa";
 import Confetti from 'react-confetti'
+
 
 
 const Rockpaper =  () => {
@@ -16,6 +18,7 @@ const Rockpaper =  () => {
   }
   const checkWin = ()=>{
     
+
   }
 
   const choice = [
@@ -65,7 +68,7 @@ const Rockpaper =  () => {
         <div className='bg-orange-400'>your score :</div>
         <div className='bg-orange-400'>computerscore :</div>
         
-      
+
       
        </div>
 
