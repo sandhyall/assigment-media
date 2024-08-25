@@ -1,11 +1,17 @@
-import React from 'react'
-import { GoThumbsUp } from "react-icons/fa";
+'use client'
+import { Button } from '@nextui-org/react';
+import React, { useState } from 'react'
+import { GoThumbsup } from "react-icons/go";
 
-const facebook=()=> {
+const facebook = () => {
+  const [reaction, setReaction] = useState(null)
+const changeReaction = (newReaction) =>{
+  setReaction(newReaction)
+}
   return (
     <div>
-      <GoThumbsUp />
-      
+     <Button className = {reaction=='like'? 'bg-blue-400': null}onClick={()=>changeReaction('like')}> <GoThumbsup /> Like </Button> 
+     <Button className = {reaction=='like'? 'bg-blue-400': null}onClick={()=>changeReaction('like')}> <GoThumbsup /> WoW </Button> 
     </div>
   )
 }
