@@ -12,7 +12,7 @@ const login=()=> {
 
   return (
 
-< div className='flex justify-center item-center bg-purple-400 bg-gradient-to-r'>
+< div className='flex justify-center item-center bg-slate-50  bg-gradient-to-r'>
       <Card className=' w-96 pl-px m-12'>
         <CardBody className='flex gap-3'>
       <p className='bg-teal-400 w-dvw min-h-20 p-px rounded-s-xl '>Login Form</p>
