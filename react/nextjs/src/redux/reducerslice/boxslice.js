@@ -11,22 +11,35 @@ export const boxSlice = createSlice({
     margin:20,
     marginLeft:20,
     marginRight:20,
-    marginTop: 50
+    marginTop: 10
 
   },
   reducers: {
-    changeToCircle: (state, action) => {
-      state.height=state.width
-state.borderRadius= '50%'
+    changeToShape: (state, action) => {
+      if(state.borderRadius == '50%'){
+        state.borderRadius=0
+      }else{
+        state.height=state.width
+        state.borderRadius= '50%'
+      }
     },
  
 increaseWidth: (state, action) => {
-      state.width++
+  return{
+    ...state,
+    width:state.width+20
+  }
    },
-   changeTorectangle: (state, action) => {
-    state.height=state.width
-    state.borderRadius= '0%'
+   decreaseWidth: (state, action) => {
+    return{
+      ...state,
+      width:state.width-20
+    }
  },
+//    changeTorectangle: (state, action) => {
+//     state.height=state.width
+//     state.borderRadius= '0%'
+//  },
     changebackgroundColor:(state,action)=>{
       state.backgroundColor=action.payload
     },
@@ -37,16 +50,16 @@ increaseWidth: (state, action) => {
       state.marginLeft= state.marginLeft-20
     },
     moveBottom: (state, action) => {
-      state.marginTop =  state.marginTop +20
+      state.marginTop =  state.marginTop +10
     },
     moveUp: (state, action) => {
-      state.marginTop =  state.marginTop -20
+      state.marginTop =  state.marginTop -10
     },
     
   }
 })
 
 
-export const { changeToCircle,increaseWidth,changeTorectangle,changebackgroundColor,moveRight,moveLeft,moveUp,moveBottom } = boxSlice.actions
+export const { changeToShape,increaseWidth, decreaseWidth,changeTorectangle,changebackgroundColor,moveRight,moveLeft,moveUp,moveBottom } = boxSlice.actions
 
 export default boxSlice.reducer
