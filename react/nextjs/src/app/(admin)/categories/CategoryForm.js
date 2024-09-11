@@ -16,8 +16,10 @@ export default function CategoryForm() {
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
+              
               <ModalBody>
                 <Input placeholder="Enter Category Name" value={category} onChange={(e)=>setCategory(e.target.value)}/>
+                
               </ModalBody>
               <Button onClick={saveCategory}>Save Category</Button>
             </>
